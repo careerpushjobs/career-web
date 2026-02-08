@@ -21,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen bg-gray-50 text-gray-900 antialiased`}>
-        <GoogleAdSense pId="ca-pub-6077598750200529" />
+        <GoogleAdSense pId={process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID as string} />
 
         {/* Ad Gate Overlay */}
-        <AdGate client="ca-pub-6077598750200529" slot="4981025905" />
+        <AdGate client={process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID as string} slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_GATE as string} />
 
         <Header />
 
@@ -35,8 +35,8 @@ export default function RootLayout({
           <aside className="w-full xl:w-[160px] xl:sticky xl:top-24 flex-shrink-0 mx-0 xl:mx-4 order-1 mb-8 xl:mb-0">
             <div className="flex justify-center min-h-[100px] xl:min-h-[600px] bg-gray-100/50 rounded-lg">
               <AdSenseUnit
-                client="ca-pub-6077598750200529"
-                slot="1252807538"
+                client={process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID as string}
+                slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR_LEFT as string}
                 format="auto"
                 responsive={true}
                 style={{ display: 'block', width: '100%' }}
@@ -53,8 +53,8 @@ export default function RootLayout({
           <aside className="w-full xl:w-[160px] xl:sticky xl:top-24 flex-shrink-0 mx-0 xl:mx-4 order-3 mt-8 xl:mt-0">
             <div className="flex justify-center min-h-[100px] xl:min-h-[600px] bg-gray-100/50 rounded-lg">
               <AdSenseUnit
-                client="ca-pub-6077598750200529"
-                slot="9933135531"
+                client={process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID as string}
+                slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR_RIGHT as string}
                 format="auto"
                 responsive={true}
                 style={{ display: 'block', width: '100%' }}
